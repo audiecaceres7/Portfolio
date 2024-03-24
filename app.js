@@ -1,19 +1,69 @@
-import { animate_char } from "./js/animate_char.js"
+const toggleData = (elm, dataset, theme1, theme2) => {
+    if (elm.dataset[dataset] === theme1) {
+        elm.dataset[dataset] = theme2
+    } else {
+        elm.dataset[dataset] = theme1
+    }
+}
 
-document.addEventListener("DOMContentLoaded", async () => {   
-    const form = document.querySelector("#form_name");
-    const name = document.querySelector("#name_input");
-    const container = document.querySelector("#name_container");
+const iconToggle = (elm, dataset, option, icon1, icon2) => {
+    if (elm.dataset[dataset] === option) {
+        return icon1
+    } else {
+        return icon2
+    }
+}
 
-    const random_greeting = ["Hi", "Hello", "Hola"];
+document.addEventListener("DOMContentLoaded", () => {   
+    const body = document.querySelector("body");
+    const theme_btn = document.querySelector(".theme_btn");
+    const menu_btn = document.querySelector(".menu_btn");
+    const close_btn = document.querySelector(".close_btn");
 
-    await animate_char("Welcome to vim legends", "name_container", "teal-100")
-    animate_char("Enter name", "label_name", "slate-100")
+    const links = document.querySelectorAll(".menu_links");
 
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        animate_char(`${random_greeting[Math.floor(Math.random() * random_greeting.length)]}, ${name.value}...`, "hello_container", "teal-100")
-        form.remove()
-        container.remove()
+    links.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            console.log("nice")
+        })
+    })
+
+    const sidenav = document.querySelector(".sidenav");
+
+    menu_btn.addEventListener("click", () => {
+        sidenav.classList.add("slidein")
+        sidenav.classList.remove("slideout")
+        sidenav.hidden = false
+    })
+
+    close_btn.addEventListener("click", () => {
+        sidenav.classList.add("slideout")
+        sidenav.classList.remove("slidein")
+        sidenav.addEventListener("animationend", () => {
+            sidenav.hidden = true
+        }, { once: true })
+    })
+
+
+
+    theme_btn.addEventListener("click", async () => {
+        await new Promise((res) => {
+            setTimeout(() => {
+                theme_btn.classList.add("fadein")
+                theme_btn.addEventListener("animationend", () => {
+                    theme_btn.classList.add("fadeout")
+                    theme_btn.innerHTML = iconToggle(
+                        body, 
+                        "theme",
+                        "light", 
+                        `<i class="fa-solid fa-moon"></i>`,
+                        `<i class="fa-solid fa-lightbulb"></i>`,
+                    )
+                })
+            })
+            res()
+        })
+        theme_btn.classList.remove("fadeout", "fadein")
+        toggleData(body, "theme", "light", "dark")
     })
 })

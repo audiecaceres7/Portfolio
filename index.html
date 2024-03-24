@@ -16,13 +16,40 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
+        <!-- font awsome -->
+        <script src="https://kit.fontawesome.com/3c61ba1994.js" crossorigin="anonymous"></script>
+
     </head>
-    <body class="grid place-center">
-        <div id="name_container" class="slate-100 text-4xl text-pixel"></div> 
-        <form id="form_name" class="flex justify-center items-center gap-3">
-            <label id="label_name" for="name" class="slate-100 text-10 text-default"></label>
-            <input id="name_input" class="teal-100 text-pixel text-10" type="text" autocomplete="off"></input>
-        </form>
-        <div id="hello_container" class="slate-100 text-4xl text-pixel"></div> 
+    <body data-theme="light"> 
+        <div class="main_container">
+
+            <!-- sidenav -->
+            <div class="sidenav" hidden>
+                <div class="top_menu_section">
+                    <div class="close_btn btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <ul class="bottom_menu_section">
+                    <li class="menu_links">Home</li>
+                    <li class="menu_links">Projects</li>
+                    <li class="menu_links">About me</li>
+                    <li class="menu_links">Contact me</li>
+                </ul>
+            </div> 
+
+            <div class="navbar">
+                <div class="menu_btn btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="theme_btn btn" data-theme="light">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+            </div>
+
+            <div class="hero_section">
+                <div class="hero_title">Hello, World</div>
+            </div>
+        </div>
     </body>
 </html>
