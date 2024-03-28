@@ -2,6 +2,7 @@
 
 :root {
     /* font family's */
+    --font-mono: "Space Mono", monospace; 
     --font-pixel: "Pixelify Sans", sans-serif; 
     --font-default: "Titillium Web", sans-serif;
 
