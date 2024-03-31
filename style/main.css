@@ -15,6 +15,7 @@
 
     /* main-bg */
     --bg: #ffffff;
+    --sidenav-bg: #121212;
 
     /* base colors (slate) */
     --base-100: #c4d4eb;
@@ -58,8 +59,9 @@
 }
 
 [data-theme="dark"] {
-    --bg: #121217;
-    --neutral: white;
+    --bg: #121212;
+    --neutral: #ffffff;
+    --sidenav-bg: #ffffff;
 }
 
 * {

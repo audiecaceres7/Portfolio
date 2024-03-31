@@ -1,4 +1,9 @@
-import { hackerAnimate, pixelAnimate } from "./js/pixelAnimation"
+import { Hero } from "./components/Hero_section";
+import Router from "./js/router.js";
+import { close_menu, open_menu } from "./js/sidenav_controls.js";
+
+globalThis.window.app = {}  
+app.router = Router
 
 const toggleData = (elm, dataset, theme1, theme2) => {
     if (elm.dataset[dataset] === theme1) {
@@ -16,55 +21,48 @@ const iconToggle = (elm, dataset, option, icon1, icon2) => {
     }
 }
 
-document.addEventListener("DOMContentLoaded", async () => {   
+document.addEventListener("DOMContentLoaded", () => {   
+    app.router.init()
     const body = document.querySelector("body");
     const theme_btn = document.querySelector(".theme_btn");
+
     const menu_btn = document.querySelector(".menu_btn");
     const close_btn = document.querySelector(".close_btn");
-    //const menu_bottom = document.querySelector(".bottom_menu_section")
-
-    const menu_links = document.querySelectorAll(".menu_links")
-    const hero_title = document.querySelector(".hero_title")
-    const hero_des = document.querySelector(".hero_des")
-
     const sidenav = document.querySelector(".sidenav");
 
-    menu_btn.addEventListener("click", () => {
-        sidenav.classList.add("slidein")
-        sidenav.classList.remove("slideout")
-        sidenav.hidden = false
+    document.addEventListener("keydown", ({ key }) => {
+        if (key === "Escape") {
+            if (!sidenav.hidden) {
+                close_menu()
+            } else {
+                open_menu()
+            }
+        }
     })
 
-    close_btn.addEventListener("click", () => {
-        sidenav.classList.add("slideout")
-        sidenav.classList.remove("slidein")
-        sidenav.addEventListener("animationend", () => {
-            sidenav.hidden = true
-        }, { once: true })
-    })
-
+    menu_btn.addEventListener("click", open_menu)
+    close_btn.addEventListener("click", close_menu)
 
     theme_btn.addEventListener("click", async () => {
+        const theme_icon = document.querySelector(".theme_icon");
         await new Promise((res) => {
             setTimeout(() => {
-                theme_btn.classList.add("fadein")
-                theme_btn.addEventListener("animationend", () => {
-                    theme_btn.classList.add("fadeout")
+                theme_icon.classList.add("fadein")
+                theme_icon.addEventListener("animationend", () => {
                     theme_btn.innerHTML = iconToggle(
                         body, 
                         "theme",
-                        "light", 
-                        `<i class="fa-solid fa-moon"></i>`,
-                        `<i class="fa-solid fa-lightbulb"></i>`,
+                        "dark", 
+                        `<i class="theme_icon fa-solid fa-lightbulb"></i>`,
+                        `<i class="theme_icon fa-solid fa-moon"></i>`,
                     )
+                    const theme_icon = document.querySelector(".theme_icon");
+                    theme_icon.classList.add("fadeout")
                 })
             })
             res()
         })
-        theme_btn.classList.remove("fadeout", "fadein")
+        theme_icon.classList.remove("fadeout", "fadein")
         toggleData(body, "theme", "light", "dark")
     })
-
-    pixelAnimate("HELLO, WORLD".length, hero_title)
-    hackerAnimate(menu_links)
 })

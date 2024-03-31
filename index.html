@@ -20,25 +20,27 @@
         <script src="https://kit.fontawesome.com/3c61ba1994.js" crossorigin="anonymous"></script>
 
     </head>
-    <body data-theme="light"> 
+    <body data-theme="dark"> 
         <div class="main_container">
-
             <!-- sidenav -->
             <div class="sidenav" hidden>
-                <div class="top_menu_section">
-                    <span>MENU</span>
-                    <div class="close_btn btn">
-                        <i class="fa-solid fa-xmark"></i>
+                <div class="sidenav_inner">
+                    <div class="top_menu_section">
+                        <span>MENU</span>
+                        <div class="close_btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="bottom_menu_section">
+                        <a href="/" class="menu_links">HOME</a>
+                        <a href="/projects" class="menu_links">PROJECTS</a>
+                        <a href="/about_me" class="menu_links">ABOUT ME</a>
+                        <a href="/contact_me" class="menu_links">CONTACT ME</a>
                     </div>
                 </div>
-                <ul class="bottom_menu_section">
-                    <li class="menu_links">HOME</li>
-                    <li class="menu_links">PROJECTS</li>
-                    <li class="menu_links">ABOUT ME</li>
-                    <li class="menu_links">CONTACT ME</li>
-                </ul>
             </div> 
 
+            <!-- navbar -->
             <div class="navbar">
                 <div class="logo_container">
                     <div class="menu_btn btn">
@@ -47,14 +49,32 @@
                     <span>AC_Port</span>
                 </div>
                 <div class="theme_btn btn" data-theme="light">
-                    <i class="fa-solid fa-moon"></i>
+                    <i class="theme_icon fa-solid fa-lightbulb"></i>
                 </div>
             </div>
 
-            <div class="hero_section">
-                <div class="hero_title"></div>
-                <div class="hero_des"></div>
+            <!-- page container --> 
+            <div class="page_container"></div>
+            <div class="link_container">
+                <div class="link_title">Social links</div>
+                <div class="link_list">
+                    <a class="link_box" href="#">
+                        <i class="icon fa-brands fa-github"></i>
+                    </a>
+                    <a class="link_box" href="#">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a class="link_box" href="#">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </div>
+
+        <!-- hero template --> 
+        <template id="hero-template">
+            <div class="hero_title fadeout">Hello, World</div>
+            <div class="hero_des"></div>
+        </template>
     </body>
 </html>
