@@ -1,4 +1,5 @@
 @import "style.css";
+@import "projects.css";
 
 :root {
     /* font family's */
@@ -15,7 +16,7 @@
 
     /* main-bg */
     --bg: #ffffff;
-    --sidenav-bg: #121212;
+    --sidenav-bg: #171717;
 
     /* base colors (slate) */
     --base-100: #c4d4eb;
@@ -23,7 +24,7 @@
     --base-300: #334155;
     --base-400: #1e293b;
 
-    --neutral: black;
+    --neutral: #171717;
 
     /* font sizes */
     --font-1: 1rem;

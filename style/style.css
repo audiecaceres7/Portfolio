@@ -197,6 +197,16 @@
     }
 }
 
+@keyframes return_fill {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
 .top_menu_section {
     display: flex;
     justify-content: end;
@@ -265,11 +275,14 @@
 .page_container {
     height: 90%;
     width: 100%;
+}
+
+.hero_section {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    height: 90%;
 }
 
 .hero_title {
@@ -321,7 +334,6 @@
     list-style: none;
     color: var(--neutral);
     text-decoration: none;
-    animation: slide_in 500ms;
 }
 
 .link_box:hover {

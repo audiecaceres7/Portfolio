@@ -1,4 +1,6 @@
 import { Hero } from "./components/Hero_section";
+import { Projects } from "./components/Projects_section"
+
 import Router from "./js/router.js";
 import { close_menu, open_menu } from "./js/sidenav_controls.js";
 

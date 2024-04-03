@@ -32,7 +32,7 @@ const Router = {
                 page = document.createElement("hero-section")
                 break;
             case "/projects":
-                page = document.createElement("div")
+                page = document.createElement("projects-section")
                 break;
         }
 
