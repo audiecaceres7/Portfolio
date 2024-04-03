@@ -1,89 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>portfolio</title>
 
-        <!-- js file -->
-        <script src="app.js" type="module"></script> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>portfolio</title>
 
-        <!-- style file -->
-        <link rel="stylesheet" href="style/main.css">
+    <!-- js file -->
+    <script src="app.js" type="module"></script>
 
-        <!-- google font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- style file -->
+    <link rel="stylesheet" href="style/main.css">
 
-        <!-- font awsome -->
-        <script src="https://kit.fontawesome.com/3c61ba1994.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
 
-    </head>
-    <body data-theme="dark"> 
-        <div class="main_container">
-            <!-- sidenav -->
-            <div class="sidenav" hidden>
-                <div class="sidenav_inner">
-                    <div class="top_menu_section">
-                        <span>MENU</span>
-                        <div class="close_btn">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-                    </div>
-                    <div class="bottom_menu_section">
-                        <a href="/" class="menu_links">HOME</a>
-                        <a href="/projects" class="menu_links">PROJECTS</a>
-                        <a href="/about_me" class="menu_links">ABOUT ME</a>
-                        <a href="/contact_me" class="menu_links">CONTACT ME</a>
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/3c61ba1994.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body data-theme="dark">
+    <div class="main_container">
+        <!-- sidenav -->
+        <div class="sidenav" hidden>
+            <div class="sidenav_inner">
+                <div class="top_menu_section">
+                    <span>MENU</span>
+                    <div class="close_btn">
+                        <i class="fa-solid fa-xmark"></i>
                     </div>
                 </div>
-            </div> 
-
-            <!-- navbar -->
-            <div class="navbar">
-                <div class="logo_container">
-                    <div class="menu_btn btn">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                    <span>AC_Port</span>
-                </div>
-                <div class="theme_btn btn" data-theme="light">
-                    <i class="theme_icon fa-solid fa-lightbulb"></i>
-                </div>
-            </div>
-
-            <!-- page container --> 
-            <div class="page_container"></div>
-            <div class="link_container">
-                <div class="link_title">Social links</div>
-                <div class="link_list">
-                    <a class="link_box" href="#">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a class="link_box" href="#">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a class="link_box" href="#">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
+                <div class="bottom_menu_section">
+                    <a href="/" class="menu_links">HOME</a>
+                    <a href="/projects" class="menu_links">PROJECTS</a>
+                    <a href="/about_me" class="menu_links">ABOUT ME</a>
+                    <a href="/contact_me" class="menu_links">CONTACT ME</a>
                 </div>
             </div>
         </div>
 
-        <!-- hero template --> 
-        <template id="hero-template">
-            <div class="hero_section">
-                <div class="hero_title fadeout">hello, world</div>
-                <div class="hero_des"></div>
+        <!-- navbar -->
+        <div class="navbar">
+            <div class="logo_container">
+                <div class="menu_btn btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <span>AC_Port</span>
             </div>
-        </template>
+            <div class="theme_btn btn" data-theme="light">
+                <i class="theme_icon fa-solid fa-lightbulb"></i>
+            </div>
+        </div>
 
-        <template id="projects-template">
-            <div class="projects_section">
-                <div class="projects_title"></div>
-                <div id="project_container" class="projects_container"></div>
+        <!-- page container -->
+        <div class="page_container"></div>
+        <div class="link_container">
+            <div class="link_title">Social links</div>
+            <div class="link_list">
+                <a class="link_box" href="#">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a class="link_box" href="#">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a class="link_box" href="#">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
             </div>
-        </template>
-    </body>
+        </div>
+    </div>
+
+    <!-- hero template -->
+    <template id="hero-template">
+        <div class="hero_section">
+            <div class="hero_title fadeout">hello, world</div>
+            <div class="hero_des"></div>
+        </div>
+    </template>
+
+    <template id="projects-template">
+        <div class="projects_section">
+            <div class="projects_title"></div>
+            <div id="project_container" class="projects_container"></div>
+        </div>
+    </template>
+</body>
+
 </html>

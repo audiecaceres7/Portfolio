@@ -42,7 +42,10 @@ const Router = {
             page_container.appendChild(page)
             globalThis.window.scrollX = 0
             globalThis.window.scrollY = 0
-            hackerAnimate(menu_links)
+
+            menu_links.forEach(link => {
+                hackerAnimate(link)
+            })
         }
     }
 }
