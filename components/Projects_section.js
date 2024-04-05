@@ -1,10 +1,39 @@
 import { pixelAnimate } from "../js/pixelAnimation"
-import { hackerAnimate } from "../js/pixelAnimation.js";
 
 export class Projects extends HTMLElement {
     constructor() {
         super()
-        this.boxes = []
+        this.boxes = [
+            {
+                title: "Folio website",
+                url: "../assets/images/cube.png"
+            },
+            {
+                title: "Saas website",
+                url: "../assets/images/cube.png"
+            },
+            {
+                title: "Mareys website",
+                url: "../assets/images/cube.png"
+            },
+            {
+                title: "VIM_legends website",
+                url: "../assets/images/cube.png"
+            },
+            {
+                title: "poke website",
+                url: "../assets/images/cube.png"
+            }
+        ]
+       
+        this.positions = [
+            {x: 600, y: 0, z: 0},
+            {x: 350, y: -50, z: 1},
+            {x: 0, y: -100, z: 10},
+            {x: -350, y: -50, z: 1},
+            {x: -600, y: 0, z: 0},
+        ]
+        this.index = 2
     }
     
     connectedCallback() {
@@ -12,80 +41,57 @@ export class Projects extends HTMLElement {
         const node = template.content.cloneNode(true)
         const des = node.querySelector(".projects_title")
         pixelAnimate("Projects", des)
-        this.addGridBox(node)
-        this.check_box(node)
         this.appendChild(node)
+        this.addGridBox()
+        this.moveGridBox()
+        this.control()
     }
 
-    addGridBox(node) {
-        this.boxes = [
-            {
-                title: "Folio website",
-                url: "../assets/images/cube.png"
-            },
-            {
-                title: "PokeApi website",
-                url: "../assets/images/pokeball.png"
-            },
-            {
-                title: "Marey's painting website",
-                url: "../assets/images/marey.png"
+    control() {
+        this.querySelector(".control_container").onclick = (event) => {
+            if (event.target.id === "left") {
+                this.index--
+            } else if (event.target.id === "right") {
+                this.index++
             }
-        ]
-       
-        for (let i = 0; i < this.boxes.length; i++) {
-            const grid_box = document.createElement("div") 
-            grid_box.classList.add("grid_box")
-       
-            grid_box.style = `--order: ${i+1}`
-            grid_box.style.backgroundImage = `url(${this.boxes[i].url})`
-            grid_box.classList.add("enter")
-            grid_box.style.animationDelay = "calc(var(--order) * 100ms)";
-
-            const inner_wrapper = document.createElement("div")
-            inner_wrapper.classList.add("inner_wrapper")
-            inner_wrapper.hidden = true;
-            grid_box.appendChild(inner_wrapper)
-
-            const title = document.createElement("div")
-            title.classList.add("box_title")
-            title.innerHTML = this.boxes[i].title
-
-            const content = document.createElement("div")
-            content.classList.add("box_content")
-            content.style.display = "none"
-            content.appendChild(title)
-
-            grid_box.appendChild(content)
-            node.querySelector(".projects_container").appendChild(grid_box)
+            this.moveGridBox() 
         }
     }
 
-    check_box(node) {
-        node.querySelector(".projects_container").addEventListener("click", event => {
-            if (event.target.id === "project_container") {
-                return
-            } else if (event.target.classList.contains("grid_box_image")) {
-                return
-            }
-            
+    moveGridBox() {
+        const pos = [
+            this.index - 2 < 0 ? 4 - 2 : this.index - 2,
+            this.index - 1 < 0 ? 4 - 1 : this.index - 1,
+            this.index,
+            this.index + 1 > 4 ? 0 + 1 : this.index + 1,
+            this.index + 2 > 4 ? 0 + 2 : this.index + 2,
+        ]
 
-            event.target.parentElement.querySelectorAll(".grid_box").forEach(box => {
-                box.classList.remove("active")
-                box.classList.remove("enter")
-                box.style.opacity = 0.5
-                box.querySelector(".box_content").style.display = "none"
-                box.querySelector(".inner_wrapper").hidden = true
-            });
-            event.target.style.opacity = 1
-            event.target.querySelector(".inner_wrapper").hidden = false
-            event.target.querySelector(".box_content").style.display = "flex"
-            event.target.classList.add("active")
-            const titles = event.target.parentElement.querySelectorAll(".box_title")
-            titles.forEach((title, index)=> {
-                pixelAnimate(this.boxes[index].title, title)
-            })
-        })
+        console.log(this.index)
+        console.log(pos)
+
+        const box_list = this.querySelectorAll(".grid_box")
+        for (let i = 0; i < this.positions.length; i++) {
+            box_list[i].style.transform = `translate(${this.positions[i].x}px, ${this.positions[i].y}px)`
+            box_list[i].style.zIndez = this.positions[i].z
+        }
+
+        for (let i = 0; i < pos.length; i++) {
+            box_list[pos[i]].style.transform = `translate(${this.positions[i].x}px, ${this.positions[i].y}px)`
+        }
+    }
+
+    addGridBox() {
+        for (let i = 0; i < this.boxes.length; i++) {
+            const grid_box = document.createElement("div") 
+            grid_box.classList.add("grid_box")
+            this.querySelector(".projects_container").appendChild(grid_box)
+
+            const title = document.createElement("div")
+            title.classList.add("box_title")
+            title.innerText = this.boxes[i].title
+            grid_box.appendChild(title)
+        }
     }
 }
 

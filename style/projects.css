@@ -1,6 +1,7 @@
 .projects_section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 100%;
     padding: var(--size-1);
@@ -11,8 +12,10 @@
 }
 
 .projects_container {
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
     height: 80%;
     width: 100%;
@@ -20,85 +23,37 @@
 }
 
 .grid_box {
-    position: relative;
-    display: flex;
-    justify-content: end;
-    align-items: start;
-    flex-wrap: nowrap;
-    width: 150px;
-    height: 100%;
-    cursor: pointer;
-    background-size: 200px;
-    background-repeat: no-repeat;
-    background-position: 20px 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    transition: all ease 400ms;
-    opacity: 0;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.box_content {
-    display: none;
-    justify-content: end;
-    align-items: start;
-    flex-wrap: nowrap;
-}
-
-.grid_box:hover {
-    transform: scale(1.05);
-    opacity: 1;
-}
-
-.active:hover {
-    transform: scale(1);
-}
-
-.grid_box_image {
     position: absolute;
-    top: 40%;
-    width: 150px;
-    height: 150px;
+    width: 320px;
+    height: 320px;
+    border: 1px solid var(--neutral);
+    transition: all ease-in-out 200ms;
+    background-color: var(--bg);
+}
+
+.control_container {
+    display: flex;
+    gap: var(--size-1);
 }
 
 .active {
-    width: 1000px;
-    background-position: 120% 170%;
-    background-size: 500px;
-    border-radius: 5px;
-    opacity: 1;
+    background-color: var(--primary-100);
 }
 
-.enter {
-    animation: enter 0.3s ease forwards;
+.control_container i {     
+    cursor: pointer;
+    font-size: var(--font-8);
+    border: 1px solid white;
+    padding:  var(--font-1);
+    transition: all ease-in-out 200ms;
+}
+
+.control_container i:hover {     
+    background-color: var(--neutral);
+    color: var(--bg);
 }
 
 .box_title {
-    font-size: var(--size-1);
-}
-
-.inner_wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0);
-    overflow: hidden;
-}
-
-@keyframes enter {
-    0% {
-        transform: translateX(40px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 0.7;
-    }
+    font-size: var(--font-5);
+    color: var(--neutral);
 }
