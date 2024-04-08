@@ -15,7 +15,7 @@ export const open_menu = () => {
         pixelAnimate(elm.innerText, elm)
     })
     const sidenav = document.querySelector(".sidenav");
-    clip_path(sidenav)
+    clip_path(sidenav, 1)
     sidenav.hidden = false
     sidenav.classList.add("slidein")
     sidenav.classList.remove("slideout")

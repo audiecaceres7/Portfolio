@@ -52,7 +52,7 @@ export const pixelAnimate = (word, html_elm) => {
     }, 25)
 }
 
-export const clip_path = (html_elm) => {
+export const clip_path = (html_elm, time) => {
     let iterations = 0.00
     const interval = setInterval(() => {
     html_elm.style.clipPath = `polygon(0 0, ${iterations*190}% 0, ${iterations*100}% 100%, 0% 100%)`;
@@ -60,5 +60,5 @@ export const clip_path = (html_elm) => {
         clearInterval(interval)
     }
     iterations+=0.01
-  })
+  }, time)
 }

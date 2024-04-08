@@ -28,7 +28,7 @@
     position: absolute;
     width: 500px;
     height: 100%;
-    z-index: 100;
+    z-index: 150;
     background-color: var(--sidenav-bg);
     overflow: hidden;
     color: var(--bg);
@@ -173,8 +173,7 @@
     border-top-right-radius: 9px;
     background-color: var(--neutral);
     color: var(--bg);
-    animation: fill 200ms;
-    animation-fill-mode: forwards;
+    animation: fill 200ms forwards;
 }
 
 .theme_btn {
@@ -194,16 +193,6 @@
 
     100% {
         width: 100%;
-    }
-}
-
-@keyframes return_fill {
-    0% {
-        width: 100%;
-    }
-
-    100% {
-        width: 0;
     }
 }
 
