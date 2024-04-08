@@ -92,3 +92,8 @@ body {
     color: var(--neutral);
     font-family: var(--font-default);
 }
+
+a {
+    text-decoration: none;
+    color: var(--primary-300);
+}
