@@ -92,14 +92,7 @@ export class Projects extends HTMLElement {
     }
 
     onClick() {
-        const close = this.querySelector("#close_proj_btn")
-        if (this.dataset.box === "open") {
-            console.log("its already open")
-            close.onclick = () => {
-                this.dataset.box = "close"
-            }
-        }
-        console.log("nice")
+        const close = this.querySelector("#close_proj_btn");
         close.dataset.box = "open"
         this.dataset.box = "open"
     }
@@ -126,7 +119,6 @@ export class Projects extends HTMLElement {
         }
         
         box_list[pos[2]].classList.add("active")
-        box_list[pos[2]].dataset.box = ""
         box_list[pos[2]].onclick = this.onClick
         pixelAnimate(
             box_list[pos[2]].querySelector(".box_title").innerText.toUpperCase(), 
@@ -157,6 +149,9 @@ export class Projects extends HTMLElement {
             const box_parsed = document.createElement("div")
             box_parsed.classList.add("box")
             box_parsed.innerHTML = grid_box
+            box_parsed.querySelector("#close_proj_btn").onclick = () => {
+                this.querySelector(".active").dataset.box = "close"
+            }
             this.querySelector(".projects_container").appendChild(box_parsed)
         }
     }
