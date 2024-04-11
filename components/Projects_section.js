@@ -126,11 +126,11 @@ export class Projects extends HTMLElement {
                 </div>
                 <div class="box_link_container">
                     <div class="icon_title">Website link</div>
-                    <a href="${this.boxes[i].link}">${this.boxes[i].link}</a>
+                    <a href="${this.boxes[i].link}" target="_blank">${this.boxes[i].link}</a>
                 </div>
                 <div class="box_link_container">
                     <div class="icon_title">Code link</div>
-                    <a href="${this.boxes[i].code}">${this.boxes[i].code}</a>
+                    <a href="${this.boxes[i].code}" target="_blank">${this.boxes[i].code}</a>
                 </div> 
                 <div class="proj_tech">
                     <div class="icon_title">Technolgies used</div>

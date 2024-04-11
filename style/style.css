@@ -127,7 +127,6 @@
 
 .close_btn:hover::before {
     background-color: var(--bg);
-    color: var(--neutral);
     animation: fill 200ms;
     animation-fill-mode: forwards;
 }
@@ -149,7 +148,6 @@
 .menu_btn:hover::before {
     border-top-left-radius: 9px;
     background-color: var(--neutral);
-    color: var(--bg);
     animation: fill 200ms;
     animation-fill-mode: forwards;
 }
@@ -250,11 +248,8 @@
 
 .menu_links:hover::before {
     background-color: var(--bg);
-    color: var(--neutral);
-    animation: fill 300ms;
-    animation-fill-mode: forwards;
-    border-radius: 5px;
-    clip-path: polygon(100% 0, 100% 70%, 95% 100%, 0 100%, 0 0);
+    animation: fill 300ms forwards;
+    clip-path: polygon(100% 0, 100% 60%, 95% 100%, 0 100%, 0 0);
 }
 
 .menu_links:hover {
@@ -262,7 +257,7 @@
 }
 
 .page_container {
-    height: 90%;
+    height: 89%;
     width: 100%;
 }
 
@@ -298,8 +293,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
     gap: 40px;
+    height: 5%;
 }
 
 .link_title {
@@ -308,30 +303,46 @@
 }
 
 .link_list {
+    position: relative;
     display: flex;
     gap: 40px;
 }
 
 .link_box {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: var(--size-1);
-    height: var(--size-1);
-    border-radius: 2px;
+    width: var(--size-2);
+    height: var(--size-2);
     transition: all ease-in-out 180ms;
     list-style: none;
-    color: var(--neutral);
     text-decoration: none;
+    color: var(--neutral);
 }
 
-.link_box:hover {
+.link_box::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    border-radius: 4px;
+}
+
+.link_box:hover::before {
     background-color: var(--neutral);
-    color: var(--bg);
+    animation: fill 300ms forwards;
 }
 
 .link_box i {
     font-size: var(--font-9);
+}
+
+.link_box:hover {
+    color: var(--bg);
 }
 
 .fadein {

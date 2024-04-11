@@ -45,7 +45,7 @@
     bottom: 150px;
     width: 370px;
     height: 320px;
-    padding: var(--font-3);
+    padding: var(--font-5);
     border: 1px solid var(--neutral);
     color: var(--neutral);
     transition: all ease 300ms;

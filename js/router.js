@@ -34,6 +34,9 @@ const Router = {
             case "/projects":
                 page = document.createElement("projects-section")
                 break;
+            case "/about_me":
+                page = document.createElement("about-me-section")
+                break;
         }
 
         if (page) {

@@ -1,5 +1,6 @@
 @import "style.css";
 @import "projects.css";
+@import "about_me.css";
 
 :root {
     /* font family's */
@@ -59,12 +60,6 @@
     --size-10: 130px;
 }
 
-[data-theme="dark"] {
-    --bg: #121212;
-    --neutral: #ffffff;
-    --sidenav-bg: #ffffff;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -86,14 +81,30 @@ video {
 }
 
 body {
-    width: 100%;
+    position: relative;
     height: 97vh;
-    background-color: var(--bg); 
-    color: var(--neutral);
+    width: 100%;
     font-family: var(--font-default);
+    background-color: var(--bg);
+    color: var(--neutral);
+    z-index: 1;
+}
+
+body::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 0;
+    height: 97vh;
+    background-color: pink;
+    color: var(--bg);
+    z-index: -1;
 }
 
 a {
     text-decoration: none;
-    color: var(--primary-300);
+    color: var(--primary-200);
 }

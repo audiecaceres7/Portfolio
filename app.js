@@ -1,5 +1,6 @@
 import { Hero } from "./components/Hero_section";
 import { Projects } from "./components/Projects_section"
+import { AboutMe } from "./components/About_me"
 
 import Router from "./js/router.js";
 import { close_menu, open_menu } from "./js/sidenav_controls.js";
@@ -10,8 +11,10 @@ app.router = Router
 const toggleData = (elm, dataset, theme1, theme2) => {
     if (elm.dataset[dataset] === theme1) {
         elm.dataset[dataset] = theme2
+        elm.style.setProperty("--before-width", "100vw")
     } else {
         elm.dataset[dataset] = theme1
+        elm.style.setProperty("--before-width", "0")
     }
 }
 
