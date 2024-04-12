@@ -60,6 +60,12 @@
     --size-10: 130px;
 }
 
+[data-theme="dark"] {
+    --neutral: #ffffff;
+    --bg: #171717;
+    --sidenav-bg: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -88,20 +94,6 @@ body {
     background-color: var(--bg);
     color: var(--neutral);
     z-index: 1;
-}
-
-body::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    top: 0;
-    width: 0;
-    height: 97vh;
-    background-color: pink;
-    color: var(--bg);
-    z-index: -1;
 }
 
 a {
