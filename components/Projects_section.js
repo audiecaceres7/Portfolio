@@ -48,7 +48,7 @@ export class Projects extends HTMLElement {
             },
             {
                 title: "poke website",
-                des: "This web application, powered by HTML, CSS, and TypeScript, presents a visually appealing collection of Pokémon cards sourced from a Pokémon API.",
+                des: "this web application, powered by html, css, and typescript, presents a visually appealing collection of pokémon cards sourced from a pokémon api.",
                 icons: [
                     `<i class="fa-brands fa-html5"></i>`,
                     `<i class="fa-brands fa-css3-alt"></i>`,
@@ -56,13 +56,12 @@ export class Projects extends HTMLElement {
                 ],
                 link: "https://poke-api-flame.vercel.app/",
                 code: "https://github.com/audiecaceres7/poke-api"
-            }
+            },
         ]
-        this.arr = [0, 1, 2, 3, 4]
         this.positions = [
             {x: 450, y: 100, z: 0, rgba: 0.4},
             {x: 570, y: -150, z: 1, rgba: 0.8},
-            {x: 0, y: -250, z: 100, rgba: 1},
+            {x: 0, y: -200, z: 100, rgba: 1},
             {x: -570, y: -150, z: 1, rgba: 0.8},
             {x: -450, y: 100, z: 0, rgba: 0.4},
         ]
@@ -73,12 +72,11 @@ export class Projects extends HTMLElement {
         const template = document.getElementById("projects-template")
         const node = template.content.cloneNode(true)
         const des = node.querySelector(".projects_title")
-        pixelAnimate("Projects", des)
         this.appendChild(node)
+        pixelAnimate("Projects", des)
         this.addGridBox()
         this.moveGridBox()
         this.control()
-        this.onClick()
     }
 
     rotateArray(array, mainIndex) {
@@ -100,7 +98,7 @@ export class Projects extends HTMLElement {
     }
 
     moveGridBox() {
-        const pos = this.rotateArray(this.arr, this.index);
+        const pos = this.rotateArray(this.positions.map((_, i) => i), this.index);
         const box_list = this.querySelectorAll(".box");
         for (let i = 0; i < pos.length; i++) {
             box_list[pos[i]].style.transform = `translate(${this.positions[i].x}px, ${this.positions[i].y}px)`;

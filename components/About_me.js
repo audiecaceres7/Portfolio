@@ -5,14 +5,14 @@ export class AboutMe extends HTMLElement {
         super()
         this.box_info = [
             {
-                des: "In my journey through the vast world of programming, I recognize the importance of diversifying my knowledge. Exploring new languages, frameworks, and domains not only expands my technical proficiency but also enriches my problem-solving abilities. I aim to grow as a versatile programmer, capable of navigating diverse challenges, contributing to innovative solutions, and staying adaptable in an ever-evolving tech landscape. My path involves continuous learning, embracing new technologies, and building a solid foundation to excel in the dynamic field of programming.",
+                des: "My name is Audie Caceres and i'm a 23-year-old software engineer specializing in the field of web development living in Miami, FL .",
                 image_one: "",
                 image_two: "",
             },
             {
-                des: "",
-                image_one: "/assets/images/cube.png",
-                image_two: "/assets/images/marey.png",
+                des: "In my journey through the vast world of programming, I recognize the importance of diversifying my knowledge. Exploring new languages, frameworks, and domains not only expands my technical proficiency but also enriches my problem-solving abilities. I aim to grow as a versatile programmer, capable of navigating diverse challenges, contributing to innovative solutions, and staying adaptable in an ever-evolving tech landscape. My path involves continuous learning, embracing new technologies, and building a solid foundation to excel in the dynamic field of programming.",
+                image_one: "",
+                image_two: "",
             },
             {
                 des: "For me, programming is more than a skill, it's a dynamic way for problem-solving and turning creative concepts into reality .Ever since I was little I had a deep respect for creativity in general and I always found myself wanting to learn new things. I have a huge passion for programming, animation, music and design . When I started to learn the basics of computer science i was amazed on the great posibilities that it can bring to my ideas. And thats where my journey started...",
@@ -21,9 +21,9 @@ export class AboutMe extends HTMLElement {
                 image_two: "",
             },
             {
-                des: "My name is Audie Caceres and i'm a 23-year-old software engineer specializing in the field of web development living in Miami, FL .",
-                image_one: "",
-                image_two: "",
+                des: "",
+                image_one: "/assets/images/cube.png",
+                image_two: "/assets/images/marey.png",
             },
         ]
     }
@@ -42,7 +42,7 @@ export class AboutMe extends HTMLElement {
             const header = document.createElement("div") 
             const des = document.createElement("p") 
 
-            if (i === 1) {
+            if (i === 3) {
                 const image_one = document.createElement("img")
                 const image_two = document.createElement("img")
                 image_one.classList.add("about_me_image")

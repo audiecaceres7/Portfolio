@@ -1,4 +1,4 @@
-import { pixelAnimate } from "../js/pixelAnimation";
+import { pixelAnimate } from "../js/pixelAnimation.js";
 
 export class Hero extends HTMLElement {    
     constructor() {
@@ -9,12 +9,16 @@ export class Hero extends HTMLElement {
     connectedCallback() {
         const template = document.getElementById("hero-template");
         const node = template.content.cloneNode(true)
-        const des = node.querySelector(".hero_des")
-        pixelAnimate(
-            "My name is Audie Caceres and I'm a 24 year old software engineer living in Miami, FL.".toUpperCase(), 
-            des    
-        )
         this.appendChild(node)
+        const hero_des = this.querySelector(".hero_des")
+        if (globalThis.window.innerWidth < 1200) {
+            hero_des.innerHTML = "MY NAME IS AUDIE CACERES AND I'M A 23 YEAR OLD SOFTWARE ENGINEER LIVING IN MIAMI, FL."
+        } else {
+            pixelAnimate(
+                "MY NAME IS AUDIE CACERES AND I'M A 23 YEAR OLD SOFTWARE ENGINEER LIVING IN MIAMI, FL.",
+                hero_des
+            )
+        }
     }
 }
 

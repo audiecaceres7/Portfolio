@@ -18,15 +18,6 @@
     object-fit: cover;
 }
 
-#projects_bg_image {
-    position: absolute;
-    top: 390px;
-    z-index: -1;
-    width: 350px;
-    height: 300px;
-    opacity: 0.2;
-}
-
 .projects_container {
     position: relative;
     display: flex;
@@ -35,6 +26,7 @@
     gap: 30px;
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 .box {
@@ -51,6 +43,7 @@
     transition: all ease 300ms;
     background-color: var(--bg);
     text-decoration: none;
+    opacity: 0;
 }
 
 .box_nav {
@@ -118,6 +111,11 @@
     transition: all ease 300ms;
 }
 
+.hidden {
+    position: absolute;
+    opacity: 0;
+    transform: translate(0, 0);
+}
 
 .control_container i {     
     display: flex;
@@ -139,4 +137,74 @@
 .control_container i:hover {     
     background-color: var(--neutral);
     color: var(--bg);
+}
+
+@media screen and (max-width: 980px) {
+    .active {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .active {
+        height: 400px;
+    }
+
+    .box_des {
+        margin-top: 0px;
+    }
+
+    .icon_title {
+        font-size: var(--font-2);
+    }
+
+    .box_link_container a {
+        font-size: var(--font-2);
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .active {
+        height: 450px;
+    }
+
+    .box_link_container  {
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .active {
+        height: 500px;
+    }
+
+    .projects_section {
+        padding: 0px 25px;
+    }
+
+    .projects_section {
+        height: 95%;
+    }
+
+    .box_des {
+        font-size: var(--font-1);
+    }
+
+    .main_contianer {
+        height: 120%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .active {
+        height: 550px;
+    }
+
+    .projects_section {
+        padding: 0px 15px;
+    }
 }

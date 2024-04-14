@@ -1,6 +1,7 @@
 @import "style.css";
 @import "projects.css";
 @import "about_me.css";
+@import "animation.css";
 
 :root {
     /* font family's */
@@ -60,10 +61,19 @@
     --size-10: 130px;
 }
 
+[data-theme="light"] {
+    transition: all ease 300ms;
+}
+
 [data-theme="dark"] {
     --neutral: #ffffff;
     --bg: #171717;
     --sidenav-bg: #ffffff;
+    transition: all ease 300ms;
+
+    #page_bg_image {
+        opacity: 0.2;
+    }
 }
 
 * {
@@ -87,13 +97,11 @@ video {
 }
 
 body {
-    position: relative;
-    height: 97vh;
-    width: 100%;
     font-family: var(--font-default);
     background-color: var(--bg);
     color: var(--neutral);
     z-index: 1;
+    height: 100%;
 }
 
 a {

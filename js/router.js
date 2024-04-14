@@ -24,7 +24,6 @@ const Router = {
         if (addToHistory) {
             history.pushState({ route }, null, route)
         }
-    
         let page = null
         const menu_links = document.querySelectorAll(".menu_links");
         switch(route) {
@@ -40,9 +39,13 @@ const Router = {
         }
 
         if (page) {
-            const page_container = document.querySelector(".page_container");
+            const page_container = document.querySelector("body");
             page_container.innerHTML = ""
+            const bg_image = document.createElement("img")
+            bg_image.id = "page_bg_image"
+            bg_image.src = "./assets/images/cube.png"
             page_container.appendChild(page)
+            page_container.appendChild(bg_image)
             globalThis.window.scrollX = 0
             globalThis.window.scrollY = 0
 

@@ -23,87 +23,80 @@
     <script src="https://kit.fontawesome.com/3c61ba1994.js" crossorigin="anonymous"></script>
 
 </head>
-
-<body data-theme="dark">
-    <div class="main_container">
-        <!-- sidenav -->
-        <div class="sidenav" hidden>
-            <div class="sidenav_inner">
-                <div class="top_menu_section">
-                    <span>MENU</span>
-                    <div class="close_btn">
-                        <i class="fa-solid fa-xmark"></i>
-                    </div>
-                </div>
-                <div class="bottom_menu_section">
-                    <a href="/" class="menu_links">HOME</a>
-                    <a href="/projects" class="menu_links">PROJECTS</a>
-                    <a href="/about_me" class="menu_links">ABOUT ME</a>
-                    <a href="/contact_me" class="menu_links">CONTACT ME</a>
-                </div>
-            </div>
+<!-- navbar -->
+<nav class="navbar">
+    <div class="logo_container">
+        <div class="menu_btn btn">
+            <i class="fa-solid fa-bars"></i>
         </div>
-
-        <!-- navbar -->
-        <div class="navbar">
-            <div class="logo_container">
-                <div class="menu_btn btn">
-                    <i class="fa-solid fa-bars"></i>
+        <span>炎 AC_port</span>
+    </div>
+    <div class="theme_btn btn" data-theme="light">
+        <i class="theme_icon fa-solid fa-lightbulb"></i>
+    </div>
+    <!-- sidenav -->
+    <div class="sidenav" hidden>
+        <div class="sidenav_inner">
+            <div class="top_menu_section">
+                <span>MENU</span>
+                <div class="close_btn">
+                    <i class="fa-solid fa-xmark"></i>
                 </div>
-                <span>AC_Port</span>
             </div>
-            <div class="theme_btn btn" data-theme="light">
-                <i class="theme_icon fa-solid fa-lightbulb"></i>
-            </div>
-        </div>
-
-        <!-- page container -->
-        <div class="page_container"></div>
-        <div class="link_container">
-            <div class="link_title">Social links</div>
-            <div class="link_list">
-                <a class="link_box" href="#">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a class="link_box" href="#">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a class="link_box" href="#">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
+            <div class="bottom_menu_section">
+                <a href="/" class="menu_links">HOME</a>
+                <a href="/projects" class="menu_links">PROJECTS</a>
+                <a href="/about_me" class="menu_links">ABOUT ME</a>
+                <a href="/contact_me" class="menu_links">CONTACT ME</a>
             </div>
         </div>
     </div>
+</nav>
 
-    <!-- hero template -->
-    <template id="hero-template">
-        <div class="hero_section">
-            <div class="hero_title fadeout">hello, world</div>
-            <div class="hero_des"></div>
-        </div>
-    </template>
-
-    <!-- Projects section template -->
-    <template id="projects-template">
-        <div class="projects_section">
-            <img id="projects_bg_image" src="./assets/images/cube.png" alt="projects_bg_image">
-            <div id="project_container" class="projects_container">
-                <div class="control_container">
-                    <div class="projects_title"></div>
-                    <i id="left" class="fa-solid fa-angle-left"></i>
-                    <i id="right" class="fa-solid fa-angle-right"></i>
-                </div>
-            </div>
-        </div>
-    </template>
-
-    <!-- Projects section template -->
-    <template id="about_me_template">
-        <div class="about_me_section">
-            <div class="about_me_main">
-            </div>
-        </div> 
-    </template>
+<body data-theme="dark">
 </body>
+
+<footer class="link_container">
+    <div class="link_title">Social links</div>
+    <div class="link_list">
+        <a class="link_box" href="#">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a class="link_box" href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a class="link_box" href="#">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+    </div>
+</footer>
+<!-- hero template -->
+<template id="hero-template">
+    <div class="hero_section">
+        <div class="hero_title fadeout">Hello, World</div>
+        <div class="hero_des"></div>
+    </div>
+</template>
+
+<!-- Projects section template -->
+<template id="projects-template">
+    <div class="projects_section">
+        <div id="project_container" class="projects_container">
+            <div class="control_container">
+                <div class="projects_title"></div>
+                <i id="left" class="fa-solid fa-angle-left"></i>
+                <i id="right" class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- Projects section template -->
+<template id="about_me_template">
+    <div class="about_me_section">
+        <div class="about_me_main">
+        </div>
+    </div> 
+</template>
 
 </html>

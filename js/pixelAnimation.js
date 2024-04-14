@@ -17,8 +17,8 @@ export const hackerAnimate = (elm) => {
             if (iterations >= event.target.innerText.length) {
                 clearInterval(interval)
             } 
-            iterations += 1 / 3
-        }, 30)
+            iterations += 1 / 4
+        }, 20)
     }
 }
 
@@ -67,51 +67,27 @@ export const change_container_shape = async (container) => {
     const greetings = ["Hello", "Hi", "Hola"]
     const boxes = [
         {
-            header: "WHERE IM HEADED",
+            header: `${greetings[Math.floor(Math.random() * greetings.length)]}...`,
             box_size: [
-                {w: 700, h: 800},
-                {w: 700, h: 600},
-                {w: 500, h: 600},
-                {w: 500, h: 700},
-                {w: 700, h: 700},
-                {w: 700, h: 380}
             ],
             intro: "slide_box",
-            position: {x: 120, y: 0} 
         },
         {
-            header: "",
+            header: "WHERE IM HEADED",
             box_size: [
-                {w: 700, h: 400},
-                {w: 700, h: 600},
-                {w: 500, h: 600},
-                {w: 500, h: 400},
-                {w: 400, h: 400},
-                {w: 700, h: 400},
             ],
             intro: "slide_box",
-            position: {x: 120, y: 100} 
         },
         {
             header: "What I love to do",
             box_size: [
-                {w: 700, h: 400},
-                {w: 500, h: 600},
-                {w: 700, h: 600},
-                {w: 700, h: 700},
-                {w: 500, h: 700},
-                {w: 800, h: 400},
             ],
             intro: "slide_box",
-            position: {x: 0, y: 100} 
         },
         {
-            header: `${greetings[Math.floor(Math.random() * greetings.length)]}...`,
-            box_size: [
-                {w: 800, h: 380},
-            ],
+            header: "",
+            box_size: [],
             intro: "slide_box",
-            position: {x: 0, y: 0} 
         },
     ]
 
@@ -122,7 +98,7 @@ export const change_container_shape = async (container) => {
             container[i].classList.remove(boxes[i].intro)
         })
 
-        if (i != 1) {
+        if (i != 3) {
             pixelAnimate(
                 boxes[i].header,
                 container[i].querySelector(`.about_me_title_${i}`), 
@@ -130,24 +106,15 @@ export const change_container_shape = async (container) => {
         }
 
         for (let j = 0; j < boxes[i].box_size.length; j++) {
-            if (j === 5) {
-                container[i].style.transform = `translate(0, ${boxes[i].position.y}%)`
-            }
-            const h = boxes[i].box_size[j].h
-            const w = boxes[i].box_size[j].w
+            const w = boxes[i].box_size[j]
             container[i].style.width = `${w}px`
-            container[i].style.height = `${h}px`
             await new Promise(res => {
                 setTimeout(() => {
                     res()
-                }, 300)
+                }, 400)
             })
         }
-        container[i].style.transform = `translate(${boxes[i].position.x}%, ${boxes[i].position.y}%)`
+        container[i].style.border = "none"
+        container[i].style.width = "100%"
     }
-    await new Promise(res => {
-        setTimeout(() => {
-            res()
-        }, 2500)
-    })
 }
