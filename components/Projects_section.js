@@ -59,11 +59,11 @@ export class Projects extends HTMLElement {
             },
         ]
         this.positions = [
-            {x: 450, y: 100, z: 0, rgba: 0.4},
-            {x: 570, y: -150, z: 1, rgba: 0.8},
-            {x: 0, y: -200, z: 100, rgba: 1},
-            {x: -570, y: -150, z: 1, rgba: 0.8},
-            {x: -450, y: 100, z: 0, rgba: 0.4},
+            {class: "last", z: 0, rgba: 0.4},
+            {class: "prev", z: 1, rgba: 0.8},
+            {class: "active", z: 100, rgba: 1},
+            {class: "next", z: 1, rgba: 0.8},
+            {class: "first", z: 0, rgba: 0.4},
         ]
         this.index = 2
     }
@@ -82,7 +82,9 @@ export class Projects extends HTMLElement {
     rotateArray(array, mainIndex) {
         const middleIndex = Math.floor(array.length / 2);
         const indexOffset = mainIndex - middleIndex;
-        const rotatedArray = array.map((_, i) => array[(i - indexOffset + array.length) % array.length]);
+        const rotatedArray = array.map((_, i) => {
+            return array[(i - indexOffset + array.length) % array.length]
+        })
         return rotatedArray;
     }
 
@@ -95,20 +97,51 @@ export class Projects extends HTMLElement {
             }
             this.moveGridBox();
         };
+
+        // Touch screen listener to drag box
+        let startX, movingX;
+        this.querySelector(".projects_container").addEventListener("touchstart", (event) => {
+            startX = event.touches[0].clientX
+        });
+
+        this.querySelector(".projects_container").addEventListener("touchmove", (event) => {
+            movingX = event.touches[0].clientX
+        });
+
+        this.querySelector(".projects_container").addEventListener("touchend", () => {
+            if (startX+100 < movingX) {
+                this.index = (this.index - 1)
+            } else if (startX-100 > movingX) {
+                this.index = (this.index + 1)
+            }
+            this.moveGridBox();
+        });
     }
 
     moveGridBox() {
         const pos = this.rotateArray(this.positions.map((_, i) => i), this.index);
         const box_list = this.querySelectorAll(".box");
         for (let i = 0; i < pos.length; i++) {
-            box_list[pos[i]].style.transform = `translate(${this.positions[i].x}px, ${this.positions[i].y}px)`;
+            if (
+                box_list[pos[i]].classList.contains("last") ||
+                box_list[pos[i]].classList.contains("prev") ||
+                box_list[pos[i]].classList.contains("active") ||
+                box_list[pos[i]].classList.contains("next") ||
+                box_list[pos[i]].classList.contains("first")
+            ) {
+                console.log(box_list[[pos[i]]])
+                box_list[pos[i]].classList.remove("last")
+                box_list[pos[i]].classList.remove("prev")
+                box_list[pos[i]].classList.remove("active")
+                box_list[pos[i]].classList.remove("next")
+                box_list[pos[i]].classList.remove("first")
+            }
+            box_list[pos[i]].classList.add(this.positions[i].class)
             box_list[pos[i]].style.zIndex = this.positions[i].z;
             box_list[pos[i]].style.opacity = this.positions[i].rgba;
-            box_list[pos[i]].classList.remove("active")
             box_list[pos[i]].querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "none")
         }
-        box_list[pos[2]].classList.add("active")
-        box_list[pos[2]].querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "flex")
+        box_list[pos[2]].querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "")
         pixelAnimate(
             box_list[pos[2]].querySelector(".box_title").innerText.toUpperCase(), 
             box_list[pos[2]].querySelector(".box_title")

@@ -26,7 +26,7 @@
     --base-300: #334155;
     --base-400: #1e293b;
 
-    --neutral: #171717;
+    --neutral: #151515;
 
     /* font sizes */
     --font-1: 1rem;
@@ -62,12 +62,12 @@
 }
 
 [data-theme="light"] {
-    transition: all ease 300ms;
+    transition: all ease-in-out 300ms;
 }
 
 [data-theme="dark"] {
     --neutral: #ffffff;
-    --bg: #171717;
+    --bg: #151515;
     --sidenav-bg: #ffffff;
     transition: all ease 300ms;
 
@@ -96,15 +96,30 @@ video {
     max-width: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: #171717
+}
+
 body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    border: 1px solid var(--neutral);
+    border-radius: 10px;
     font-family: var(--font-default);
     background-color: var(--bg);
     color: var(--neutral);
     z-index: 1;
-    height: 100%;
+    margin: 10px;
+    overflow: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: var(--primary-200);
+@media screen and (max-width: 1000px) {
+    body {
+        margin: 5px;
+    }
 }

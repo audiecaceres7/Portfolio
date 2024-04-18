@@ -23,17 +23,8 @@
     <script src="https://kit.fontawesome.com/3c61ba1994.js" crossorigin="anonymous"></script>
 
 </head>
-<!-- navbar -->
-<nav class="navbar">
-    <div class="logo_container">
-        <div class="menu_btn btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <span>炎 AC_port</span>
-    </div>
-    <div class="theme_btn btn" data-theme="light">
-        <i class="theme_icon fa-solid fa-lightbulb"></i>
-    </div>
+
+<body data-theme="dark">
     <!-- sidenav -->
     <div class="sidenav" hidden>
         <div class="sidenav_inner">
@@ -47,29 +38,56 @@
                 <a href="/" class="menu_links">HOME</a>
                 <a href="/projects" class="menu_links">PROJECTS</a>
                 <a href="/about_me" class="menu_links">ABOUT ME</a>
-                <a href="/contact_me" class="menu_links">CONTACT ME</a>
             </div>
         </div>
     </div>
-</nav>
+    <!-- left side bar -->
+    <div class="left_bar">
+    </div>
 
-<body data-theme="dark">
+    <!-- right side bar -->
+    <div class="right_bar">
+    </div>
+
+    <div class="content">
+        <nav class="navbar">
+            <div class="logo_container">
+                <div class="menu_btn btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <span>炎 AC_port</span>
+            </div>
+            <div class="theme_btn btn" data-theme="light">
+                <i class="theme_icon fa-solid fa-lightbulb"></i>
+            </div>
+        </nav>
+
+        <div class="page page_container"></div>
+        <div class="page project_container"></div>
+        <div class="page about_me_container"></div>
+        <!-- bottom side bar -->
+        <div class="bottom_bar">
+            <footer class="link_container">
+                <div class="social_link_container">
+                    <div class="link_title">Social links</div>
+                    <div class="link_list">
+                        <a class="link_box" href="#">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="link_box" href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a class="link_box" href="#">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>© 2023 Audie Caceres Jr. All Rights Reserved.</div>
+            </footer>
+        </div>
+    </div>
 </body>
 
-<footer class="link_container">
-    <div class="link_title">Social links</div>
-    <div class="link_list">
-        <a class="link_box" href="#">
-            <i class="fa-brands fa-github"></i>
-        </a>
-        <a class="link_box" href="#">
-            <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a class="link_box" href="#">
-            <i class="fa-solid fa-envelope"></i>
-        </a>
-    </div>
-</footer>
 <!-- hero template -->
 <template id="hero-template">
     <div class="hero_section">
@@ -96,7 +114,7 @@
     <div class="about_me_section">
         <div class="about_me_main">
         </div>
-    </div> 
+    </div>
 </template>
 
 </html>

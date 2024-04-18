@@ -73,6 +73,11 @@ export const change_container_shape = async (container) => {
             intro: "slide_box",
         },
         {
+            header: "",
+            box_size: [],
+            intro: "slide_box",
+        },
+        {
             header: "WHERE IM HEADED",
             box_size: [
             ],
@@ -98,7 +103,7 @@ export const change_container_shape = async (container) => {
             container[i].classList.remove(boxes[i].intro)
         })
 
-        if (i != 3) {
+        if (i != 4 && i != 1) {
             pixelAnimate(
                 boxes[i].header,
                 container[i].querySelector(`.about_me_title_${i}`), 

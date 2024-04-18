@@ -10,6 +10,11 @@ export class AboutMe extends HTMLElement {
                 image_two: "",
             },
             {
+                des: "",
+                image_one: "/assets/images/cube.png",
+                image_two: "/assets/images/cube.png",
+            },
+            {
                 des: "In my journey through the vast world of programming, I recognize the importance of diversifying my knowledge. Exploring new languages, frameworks, and domains not only expands my technical proficiency but also enriches my problem-solving abilities. I aim to grow as a versatile programmer, capable of navigating diverse challenges, contributing to innovative solutions, and staying adaptable in an ever-evolving tech landscape. My path involves continuous learning, embracing new technologies, and building a solid foundation to excel in the dynamic field of programming.",
                 image_one: "",
                 image_two: "",
@@ -42,7 +47,7 @@ export class AboutMe extends HTMLElement {
             const header = document.createElement("div") 
             const des = document.createElement("p") 
 
-            if (i === 3) {
+            if (i === 4 || i === 1) {
                 const image_one = document.createElement("img")
                 const image_two = document.createElement("img")
                 image_one.classList.add("about_me_image")
@@ -57,7 +62,7 @@ export class AboutMe extends HTMLElement {
                 des.innerHTML += this.box_info[i].des
                 box.appendChild(header)
 
-                if (i === 2) {
+                if (i === 3) {
                     const des_two = document.createElement("div")
                     const des_container = document.createElement("div")
                     des_container.classList.add("des_container")

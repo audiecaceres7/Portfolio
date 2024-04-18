@@ -4,7 +4,6 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    padding: var(--size-1);
 }
 
 .projects_title {
@@ -34,7 +33,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    bottom: 150px;
+    bottom: 200px;
     width: 370px;
     height: 320px;
     padding: var(--font-5);
@@ -44,6 +43,37 @@
     background-color: var(--bg);
     text-decoration: none;
     opacity: 0;
+}
+
+.last {
+    transform: translate(450px, 100px);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.prev {
+    transform: translate(570px, -150px);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.active {
+    color: var(--bg);
+    background-color: var(--neutral);
+    width: 700px;
+    height: 420px;
+    font-size: var(--font-5);
+    font-weight: semi-bold;
+    transition: all ease 300ms;
+    transform: translate(0px, -200px);
+}
+
+.next {
+    transform: translate(-570px, -150px);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.first {
+    transform: translate(-450px, 100px);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .box_nav {
@@ -98,17 +128,7 @@
     gap: var(--size-1);
     width: 400px;
     z-index: 100;
-}
-
-.active {
-    color: var(--bg);
-    background-color: var(--neutral);
-    width: 700px;
-    height: 420px;
-    border: 1px solid var(--neutral);
-    font-size: var(--font-5);
-    font-weight: semi-bold;
-    transition: all ease 300ms;
+    margin-bottom: var(--font-9);
 }
 
 .hidden {
@@ -141,8 +161,13 @@
 
 @media screen and (max-width: 980px) {
     .active {
-        width: 100%;
+        width: 90%;
         height: 400px;
+        transform: translate(0, -100px);
+    }
+
+    .control_container {
+        gap: 15px;
     }
 }
 
@@ -166,7 +191,7 @@
 
 @media screen and (max-width: 630px) {
     .active {
-        height: 450px;
+        height: 70%;
     }
 
     .box_link_container  {
@@ -175,36 +200,39 @@
         align-items: start;
         gap: 0;
     }
+
+    .projects_title {
+        display: none;
+    }
+
+    .box {
+        bottom: 100px;
+        padding: 15px;
+    }
 }
 
 @media screen and (max-width: 500px) {
+    .box {
+        bottom: 5%;
+        padding: 15px;
+    }
+
+    .prev {
+        height: 90%;
+        transform: translate(55%, 10px);
+    }
+
     .active {
-        height: 500px;
+        height: 90%;
+        transform: translate(0, 0);
     }
 
-    .projects_section {
-        padding: 0px 25px;
+    .next {
+        height: 90%;
+        transform: translate(-55%, 10px);
     }
 
-    .projects_section {
-        height: 95%;
-    }
-
-    .box_des {
-        font-size: var(--font-1);
-    }
-
-    .main_contianer {
-        height: 120%;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .active {
-        height: 550px;
-    }
-
-    .projects_section {
-        padding: 0px 15px;
+    .control_container {
+        display: none;
     }
 }

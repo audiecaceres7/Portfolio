@@ -1,21 +1,19 @@
 .about_me_section {
     width: 100%;
     height: 100%;
-    padding: var(--font-9) 5px;
 }
 
 .about_me_main {
     --max-width: 900px;     
     --padding: var(--font-1);     
+    padding-bottom: 100px;
     width: min(var(--max-width), 100% - (var(--padding) * 2));
     margin-inline: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: var(--size-4);
+    gap: var(--size-2);
     height: 100%;
-    overflow: scroll;
-    scrollbar-width: none;
 }
 
 .grid_box {
@@ -30,12 +28,27 @@
     opacity: 0;
 }
 
-.grid_box:nth-child(4) {
+.grid_box:nth-child(5) {
     border: none;
     flex-direction: row;
     justify-content: space-between;
     gap: var(--font-1);
     padding: 0;
+    height: 400px;
+}
+
+.grid_box:nth-child(2) {
+    border: none;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--font-1);
+    padding: 0;
+}
+
+.grid_box:nth-child(3) {
+    background-color: var(--primary-100);
+    color: #171717;
+    padding: 40px;
 }
 
 .grid_box:nth-child(4) {
@@ -68,14 +81,6 @@
     font-size: var(--font-5);
 }
 
-.about_me_title_1 {
-    font-size: var(--size-3);
-}
-
-.about_me_des_1 {
-    font-size: var(--font-3);
-}
-
 .about_me_title_2 {
     font-size: var(--size-2);
 }
@@ -84,12 +89,48 @@
     font-size: var(--font-3);
 }
 
+.about_me_title_3 {
+    font-size: var(--size-2);
+}
+
+.about_me_des_3 {
+    font-size: var(--font-3);
+}
+
 @media screen and (max-width: 1024px) {
     .about_me_main {
         overflow: unset;
+    }
+    
+    .about_me_container {
+        height: auto;
     }
 
     .des_container {
         flex-direction: column;
     } 
+}
+
+@media screen and (max-width: 700px) {
+    .about_me_container {
+        padding: var(--size-3) 5px;
+    }
+
+    .about_me_title_0 {
+        font-size: var(--size-8);
+    }
+
+    .grid_box:nth-child(5) {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .grid_box:nth-child(2) {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .grid_box {
+        padding: 0;
+    }
 }
