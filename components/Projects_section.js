@@ -1,11 +1,11 @@
-import { clip_path, hackerAnimate, pixelAnimate } from "../js/pixelAnimation"
+import { pixelAnimate } from "../js/pixelAnimation"
 
 export class Projects extends HTMLElement {
     constructor() {
         super()
         this.boxes = [
             {
-                title: "Folio website",
+                title: "FOLIO WEBSITE",
                 des: "This portfolio website is a dynamic showcase of the creator's work and skills, created using HTML, CSS, and JavaScript",
                 icons: [
                     `<i class="fa-brands fa-html5"></i>`,
@@ -17,18 +17,7 @@ export class Projects extends HTMLElement {
 
             },
             {
-                title: "Saas website",
-                des: "Proximamente",
-                icons: [
-                    `<i class="fa-brands fa-html5"></i>`,
-                    `<i class="fa-brands fa-css3-alt"></i>`,
-                    `<i class="fa-brands fa-js"></i>`
-                ],
-                link: "",
-                code: ""
-            },
-            {
-                title: "Mareys website",
+                title: "MAREY'S PAINTING",
                 des: "Painting company website using HTML, CSS, and JavaScript to bring creativity to life. Our team of painters specializes in transforming spaces into stunning works of art that inspire.",
                 icons: [
                     `<i class="fa-brands fa-html5"></i>`,
@@ -40,14 +29,7 @@ export class Projects extends HTMLElement {
 
             },
             {
-                title: "VIM_legends website",
-                des: "Soon <3",
-                icons: [],
-                link: "",
-                code: ""
-            },
-            {
-                title: "poke website",
+                title: "POKE API",
                 des: "this web application, powered by html, css, and typescript, presents a visually appealing collection of pokémon cards sourced from a pokémon api.",
                 icons: [
                     `<i class="fa-brands fa-html5"></i>`,
@@ -59,13 +41,11 @@ export class Projects extends HTMLElement {
             },
         ]
         this.positions = [
-            {class: "last", z: 0, rgba: 0.4},
             {class: "prev", z: 1, rgba: 0.8},
             {class: "active", z: 100, rgba: 1},
             {class: "next", z: 1, rgba: 0.8},
-            {class: "first", z: 0, rgba: 0.4},
         ]
-        this.index = 2
+        this.index = 1
     }
     
     connectedCallback() {
@@ -77,15 +57,6 @@ export class Projects extends HTMLElement {
         this.addGridBox()
         this.moveGridBox()
         this.control()
-    }
-
-    rotateArray(array, mainIndex) {
-        const middleIndex = Math.floor(array.length / 2);
-        const indexOffset = mainIndex - middleIndex;
-        const rotatedArray = array.map((_, i) => {
-            return array[(i - indexOffset + array.length) % array.length]
-        })
-        return rotatedArray;
     }
 
     control() {
@@ -119,33 +90,27 @@ export class Projects extends HTMLElement {
     }
 
     moveGridBox() {
-        const pos = this.rotateArray(this.positions.map((_, i) => i), this.index);
-        const box_list = this.querySelectorAll(".box");
-        for (let i = 0; i < pos.length; i++) {
-            if (
-                box_list[pos[i]].classList.contains("last") ||
-                box_list[pos[i]].classList.contains("prev") ||
-                box_list[pos[i]].classList.contains("active") ||
-                box_list[pos[i]].classList.contains("next") ||
-                box_list[pos[i]].classList.contains("first")
-            ) {
-                console.log(box_list[[pos[i]]])
-                box_list[pos[i]].classList.remove("last")
-                box_list[pos[i]].classList.remove("prev")
-                box_list[pos[i]].classList.remove("active")
-                box_list[pos[i]].classList.remove("next")
-                box_list[pos[i]].classList.remove("first")
-            }
-            box_list[pos[i]].classList.add(this.positions[i].class)
-            box_list[pos[i]].style.zIndex = this.positions[i].z;
-            box_list[pos[i]].style.opacity = this.positions[i].rgba;
-            box_list[pos[i]].querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "none")
-        }
-        box_list[pos[2]].querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "")
+        const box_list = this.querySelectorAll(".box")
+
+        box_list.forEach((box, i) => {
+            let positionIndex = (i + this.index) % this.positions.length;
+            if (positionIndex < 0) positionIndex += this.positions.length;
+            const position = this.positions[positionIndex];
+            const classes = ["last", "prev", "active", "next", "first"];
+            box.classList.remove(...classes);
+            box.classList.add(position.class);
+            box.style.zIndex = position.z;
+            box.style.opacity = position.rgba;
+            box.querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "none");
+        });
+
+        setTimeout(() => {
+            this.querySelector(".active").querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "")
+        }, 100);
         pixelAnimate(
-            box_list[pos[2]].querySelector(".box_title").innerText.toUpperCase(), 
-            box_list[pos[2]].querySelector(".box_title")
-        )
+            this.querySelector(".active").querySelector(".box_title").innerText.toUpperCase(), 
+            this.querySelector(".active").querySelector(".box_title"), 
+        );
     }
 
     addGridBox() {

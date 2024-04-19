@@ -410,6 +410,7 @@
 
     .sidenav {
         margin: 0;
+        border-radius: 0;
     }
 
     .slidein {
@@ -444,6 +445,15 @@
     .page_container {
         height: 1000px;
     }
+
+    .link_title {
+        display: none;
+    }
+
+    .link_container {
+        flex-direction: column;
+        gap: 7px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -459,15 +469,6 @@
 @media screen and (max-width: 450px) {
     .menu_links {
         font-size: var(--size-2);
-    }
-
-    .link_container {
-        flex-direction: column;
-        gap: 7px;
-    }
-
-    .link_title {
-        display: none;
     }
 }
 

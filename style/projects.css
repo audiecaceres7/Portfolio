@@ -47,12 +47,10 @@
 
 .last {
     transform: translate(450px, 100px);
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .prev {
     transform: translate(570px, -150px);
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .active {
@@ -68,12 +66,10 @@
 
 .next {
     transform: translate(-570px, -150px);
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .first {
     transform: translate(-450px, 100px);
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .box_nav {
@@ -215,6 +211,11 @@
     .box {
         bottom: 5%;
         padding: 15px;
+        justify-content: space-around;
+    }
+
+    .box_title {
+        font-size: var(--font-9);
     }
 
     .prev {
