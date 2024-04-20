@@ -1,4 +1,4 @@
-import { pixelAnimate } from "../js/pixelAnimation"
+import { pixelAnimate } from "../js/pixelAnimation.js"
 
 export class Projects extends HTMLElement {
     constructor() {
