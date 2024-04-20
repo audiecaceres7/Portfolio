@@ -1,6 +1,6 @@
-import { Hero } from "./components/Hero_section";
-import { Projects } from "./components/Projects_section"
-import { AboutMe } from "./components/About_me"
+import { Hero } from "./components/Hero_section.js";
+import { Projects } from "./components/Projects_section.js"
+import { AboutMe } from "./components/About_me.js"
 
 import Router from "./js/router.js";
 import { close_menu, open_menu } from "./js/sidenav_controls.js";
