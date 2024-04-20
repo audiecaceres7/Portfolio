@@ -13,11 +13,10 @@ export const hackerAnimate = (elm) => {
                     return chars[Math.floor(Math.random() * chars.length)]
                 })
                 .join("")
-
             if (iterations >= event.target.innerText.length) {
                 clearInterval(interval)
             } 
-            iterations += 1 / 4
+            iterations += 1 / 3
         }, 20)
     }
 }
@@ -67,7 +66,7 @@ export const change_container_shape = async (container) => {
     const greetings = ["Hello", "Hi", "Hola"]
     const boxes = [
         {
-            header: `${greetings[Math.floor(Math.random() * greetings.length)]}...`,
+            header: `${greetings[Math.floor(Math.random() * greetings.length)]}... =D`,
             box_size: [
             ],
             intro: "slide_box",
@@ -78,13 +77,13 @@ export const change_container_shape = async (container) => {
             intro: "slide_box",
         },
         {
-            header: "WHERE IM HEADED",
+            header: "WHERE IM HEADED >>",
             box_size: [
             ],
             intro: "slide_box",
         },
         {
-            header: "What I love to do",
+            header: "WHAT I LOVE TO DO <3",
             box_size: [
             ],
             intro: "slide_box",
@@ -120,6 +119,7 @@ export const change_container_shape = async (container) => {
             })
         }
         container[i].style.border = "none"
+
         container[i].style.width = "100%"
     }
 }

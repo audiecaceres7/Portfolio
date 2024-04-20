@@ -5,7 +5,7 @@ import { AboutMe } from "./components/About_me.js"
 import Router from "./js/router.js";
 import { close_menu, open_menu } from "./js/sidenav_controls.js";
 
-globalThis.window.app = {}  
+window.globalThis.app = {}  
 app.router = Router
 
 const toggleData = (elm, dataset, theme1, theme2) => {

@@ -6,13 +6,13 @@ const Router = {
         document.querySelectorAll(".menu_links").forEach(link => {
             link.addEventListener("click", event => {
                 event.preventDefault()  
-                const url = link.getAttribute("href")
+                const url = event.target.getAttribute("href")
                 Router.go(url)
                 close_menu()
             })
         })
 
-        globalThis.window.addEventListener("popstate", event => {
+        window.globalThis.addEventListener("popstate", event => {
             Router.go(event.state.route, false);
         })
 
@@ -52,8 +52,8 @@ const Router = {
             bg_image.id = "page_bg_image"
             bg_image.src = "./assets/images/cube.png"
             container.appendChild(bg_image)
-            globalThis.window.scrollX = 0
-            globalThis.window.scrollY = 0
+            window.globalThis.scrollX = 0
+            window.globalThis.scrollY = 0
 
             // enhance links
             menu_links.forEach(link => {
@@ -62,9 +62,11 @@ const Router = {
 
             page_containers.forEach(page => {
                 page.hidden = true
+                page.style.display = "none"
             })
 
             container.hidden = false
+            container.style.display = ""
             container.appendChild(page)
         }
     }

@@ -11,7 +11,7 @@ export class Hero extends HTMLElement {
         const node = template.content.cloneNode(true)
         this.appendChild(node)
         const hero_des = this.querySelector(".hero_des")
-        if (globalThis.window.innerWidth < 1200) {
+        if (window.globalThis.innerWidth < 1200) {
             hero_des.innerHTML = "MY NAME IS AUDIE CACERES AND I'M A 23 YEAR OLD SOFTWARE ENGINEER LIVING IN MIAMI, FL."
         } else {
             pixelAnimate(

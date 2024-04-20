@@ -101,7 +101,9 @@ export class Projects extends HTMLElement {
             box.classList.add(position.class);
             box.style.zIndex = position.z;
             box.style.opacity = position.rgba;
-            box.querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "none");
+            setTimeout(() => {
+                box.querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "none");
+            }, 100)
         });
 
         setTimeout(() => {

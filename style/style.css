@@ -3,6 +3,10 @@
 }
 
 .page_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--size-1);
     height: 100%;
 }
 
@@ -33,7 +37,7 @@
 
 .navbar {
     position: sticky;
-    top: 10px;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -300,14 +304,7 @@
 }
 
 .hero_section {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 90%;
-    width: 100%;
-    padding: var(--font-9);
+    text-align: start;
 }
 
 .hero_title {
@@ -389,6 +386,7 @@
 
 .link_box:hover {
     color: var(--bg);
+    background-color: var(--neutral);
 }
 
 .fadein {
@@ -402,6 +400,7 @@
 @media screen and (max-width: 980px) {
     .hero_title {
         font-size: var(--size-7);
+        justify-content: start;
     }
 
     .hero_des {
@@ -442,10 +441,6 @@
 }
 
 @media screen and (max-width: 700px) {
-    .page_container {
-        height: 1000px;
-    }
-
     .link_title {
         display: none;
     }
