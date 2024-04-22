@@ -25,7 +25,7 @@ export class Projects extends HTMLElement {
                     `<i class="fa-brands fa-js"></i>`
                 ],
                 link: "https://mareyspainting.com",
-                code: "https://github.com/audiecaceres7/mareys_painting"
+                code: "https://github.com/audiecaceres7/mareys"
 
             },
             {
@@ -72,10 +72,11 @@ export class Projects extends HTMLElement {
         document.addEventListener("keydown", ({ key }) => {
             if (key === "ArrowLeft") {
                 this.index = (this.index - 1)
+                this.moveGridBox();
             } else if (key === "ArrowRight") {
                 this.index = (this.index + 1)
+                this.moveGridBox();
             }
-            this.moveGridBox();
         })
 
         // Touch screen listener to drag box
