@@ -186,12 +186,8 @@
         margin-top: 0px;
     }
 
-    .icon_title {
-        font-size: var(--font-2);
-    }
-
     .box_link_container a {
-        font-size: var(--font-2);
+        font-size: var(--font-1);
     }
 }
 
@@ -219,13 +215,21 @@
 
 @media screen and (max-width: 500px) {
     .box {
-        bottom: 5%;
+        bottom: 3%;
         padding: 15px;
         justify-content: space-around;
     }
 
+    .box_link_container a {
+        font-size: 15px;
+    }
+
     .box_title {
         font-size: var(--font-9);
+    }
+
+    .box_des {
+        font-size: var(--font-1);
     }
 
     .prev {
@@ -234,7 +238,7 @@
     }
 
     .active {
-        height: 90%;
+        height: 95%;
         transform: translate(0, 0);
     }
 
