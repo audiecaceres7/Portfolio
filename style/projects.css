@@ -147,9 +147,17 @@
     width: 300px;
 }
 
+.control_container>i:nth-child(2) {
+    align-items: center;
+    justify-content: start;
+}
+
 .control_container>i:nth-child(3) {
     align-items: center;
     justify-content: end;
+    -webkit-justify-content: flex-end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
 }
 
 .control_container i:hover {     

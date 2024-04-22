@@ -1,19 +1,18 @@
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 export const hackerAnimate = (elm) => {
-    const word = elm.innerText
     elm.onmouseover = event => {
         let iterations = 0
         const interval = setInterval(() => {
             event.target.innerText = event.target.innerText.split("")
                 .map((_, index) => {
                     if (index < iterations) {
-                        return word[index]
+                        return event.target.dataset.value[index]
                     }
                     return chars[Math.floor(Math.random() * chars.length)]
                 })
                 .join("")
-            if (iterations >= event.target.innerText.length) {
+            if (iterations >= event.target.dataset.value.length) {
                 clearInterval(interval)
             } 
             iterations += 1 / 3

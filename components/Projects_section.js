@@ -69,6 +69,15 @@ export class Projects extends HTMLElement {
             this.moveGridBox();
         };
 
+        document.addEventListener("keydown", ({ key }) => {
+            if (key === "ArrowLeft") {
+                this.index = (this.index - 1)
+            } else if (key === "ArrowRight") {
+                this.index = (this.index + 1)
+            }
+            this.moveGridBox();
+        })
+
         // Touch screen listener to drag box
         let startX, movingX;
         this.querySelector(".projects_container").addEventListener("touchstart", (event) => {

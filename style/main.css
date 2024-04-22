@@ -5,8 +5,8 @@
 
 :root {
     /* font family's */
-    --font-mono: "Space Mono", monospace; 
-    --font-pixel: "Pixelify Sans", sans-serif; 
+    --font-mono: "Space Mono", monospace;
+    --font-pixel: "Pixelify Sans", sans-serif;
     --font-default: "Titillium Web", sans-serif;
 
     /* primary colors (teal) */
@@ -98,7 +98,7 @@ video {
 
 a {
     text-decoration: none;
-    color: #171717
+    color: var(--primary-200);
 }
 
 body {
@@ -114,7 +114,7 @@ body {
     background-color: var(--bg);
     color: var(--neutral);
     z-index: 1;
-    margin: 10px;
+    margin: 20px;
     overflow: hidden;
 }
 

@@ -63,7 +63,7 @@
 }
 
 .about_me_image {
-    width: 100%;
+    width: 50%;
     height: 100%;
     object-fit: cover;
     border: 1px solid var(--neutral);
@@ -135,6 +135,10 @@
     .grid_box:nth-child(5) {
         flex-direction: column;
         gap: 40px;
+    }
+
+    .about_me_image {
+        width: 100%;
     }
 
     .grid_box:nth-child(3) {
