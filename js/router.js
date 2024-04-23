@@ -41,11 +41,12 @@ const Router = {
                 page = document.createElement("about-me-section")
                 container = document.querySelector(".about_me_container")
                 break;
-            default: 
+            case "/404.html": 
                 page = document.createElement("div")
                 page.innerHTML = "404 PAGE NOT FOUND =["
                 container = document.querySelector(".error_page")
         }
+
 
         if (page) {
             // clear container
