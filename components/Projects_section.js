@@ -71,12 +71,11 @@ export class Projects extends HTMLElement {
 
         document.addEventListener("keydown", ({ key }) => {
             if (key === "ArrowLeft") {
-                this.index = (this.index - 1)
-                this.moveGridBox();
-            } else if (key === "ArrowRight") {
                 this.index = (this.index + 1)
-                this.moveGridBox();
+            } else if (key === "ArrowRight") {
+                this.index = (this.index - 1)
             }
+            this.moveGridBox();
         })
 
         // Touch screen listener to drag box
@@ -119,10 +118,6 @@ export class Projects extends HTMLElement {
         setTimeout(() => {
             this.querySelector(".active").querySelectorAll(".box_link_container").forEach(elm => elm.style.display = "")
         }, 100);
-        pixelAnimate(
-            this.querySelector(".active").querySelector(".box_title").innerText.toUpperCase(), 
-            this.querySelector(".active").querySelector(".box_title"), 
-        );
     }
 
     addGridBox() {

@@ -65,7 +65,7 @@ export const change_container_shape = async (container) => {
     const greetings = ["Hello", "Hi", "Hola"]
     const boxes = [
         {
-            header: `${greetings[Math.floor(Math.random() * greetings.length)]}... =D`,
+            header: `${greetings[Math.floor(Math.random() * greetings.length)]}...`,
             box_size: [
             ],
             intro: "slide_box",

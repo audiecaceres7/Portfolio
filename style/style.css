@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--size-1);
+    padding: var(--font-9);
     height: 100%;
 }
 
@@ -82,6 +82,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: var(--bg);
+    padding: 10px;
 }
 
 .left_bar {
@@ -150,7 +151,7 @@
     color: var(--neutral);
     border-bottom-left-radius: 10px;
     margin: 10px;
-    padding: 5px 10px;
+    padding: 10px;
 }
 
 .slidein {
@@ -391,22 +392,7 @@
     list-style: none;
     text-decoration: none;
     color: var(--neutral);
-}
-
-.link_box::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    z-index: -1;
-    border-radius: 4px;
-}
-
-.link_box:hover::before {
-    background-color: var(--neutral);
-    animation: fill 300ms forwards;
+    cursor: pointer;
 }
 
 .link_box i {
