@@ -190,6 +190,15 @@
     .box_link_container a {
         font-size: var(--font-1);
     }
+
+    .projects_title {
+        display: none;
+    }
+
+    .box {
+        bottom: 100px;
+        padding: 15px;
+    }
 }
 
 @media screen and (max-width: 630px) {
@@ -202,15 +211,6 @@
         justify-content: center;
         align-items: start;
         gap: 0;
-    }
-
-    .projects_title {
-        display: none;
-    }
-
-    .box {
-        bottom: 100px;
-        padding: 15px;
     }
 }
 

@@ -2,6 +2,11 @@
     display: initial;
 }
 
+.page {
+    width: 100%;
+    height: 100%;
+}
+
 .layer {
     position: absolute;
     background-color: var(--base-200);
@@ -37,7 +42,6 @@
 
 .project_container {
     height: 100%;
-    overflow: scroll;
 }
 
 .about_me_container {
