@@ -39,11 +39,21 @@ export class Projects extends HTMLElement {
                 link: "https://poke-api-flame.vercel.app/",
                 code: "https://github.com/audiecaceres7/poke-api"
             },
+            {
+                title: "POKE_API CLI Pokedex",
+                des: "This is a CLI based on pokemon's famous tool for inspecting pokemons",
+                icons: [
+                    `<i class="fa-brands fa-golang"></i>`
+                ],
+                link: "https://github.com/audiecaceres7/pokedex",
+                code: "https://github.com/audiecaceres7/pokedex"
+            },
         ]
         this.positions = [
             {class: "prev", z: 1, rgba: 0.8},
             {class: "active", z: 100, rgba: 1},
             {class: "next", z: 1, rgba: 0.8},
+            {class: "first", z: -1, rgba: 0.5}
         ]
         this.index = 1
     }
