@@ -48,7 +48,6 @@ const Router = {
                 break;
         }
 
-
         if (page) {
             // clear container
             container.innerHTML = ""
