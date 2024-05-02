@@ -73,6 +73,8 @@ const Router = {
             container.hidden = false
             container.style.display = ""
             container.appendChild(page)
+        } else {
+            console.log("page not found 404");
         }
     }
 }
