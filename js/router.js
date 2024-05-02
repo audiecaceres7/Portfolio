@@ -22,7 +22,7 @@ const Router = {
         console.log(`going to ${route}`) 
         
         if (addToHistory) {
-            history.pushState({ route }, null, route)
+            history.pushState({ route }, "", route)
         }
         let page = null
         let container = null
